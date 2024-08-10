@@ -4,6 +4,8 @@ import { Section } from "lucide-react";
 import Image from "next/image";
 import Link from 'next/link';
 import e from 'express';
+import {DataTable} from '../components/table/DataTable';
+
 import PatientForm from '@/components/Forms/PatientForm';
 import PassKeyModal from '@/components/PassKeyModal';
 
