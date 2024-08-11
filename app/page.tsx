@@ -1,19 +1,23 @@
-import dynamic from 'next/dynamic';
-import { Button } from "@/components/ui/button";
-import { Section } from "lucide-react";
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
-import e from 'express';
-import {DataTable} from '../components/table/DataTable';
-
+import { Button } from "@/components/ui/button"; // Confirm if this is used
+import { Section } from "lucide-react"; // Confirm if this is used
 import PatientForm from '@/components/Forms/PatientForm';
 import PassKeyModal from '@/components/PassKeyModal';
 
+interface SearchParamProps {
+  searchParams?: {
+    admin?: string;
+  };
+}
+
 export default function Home({ searchParams }: SearchParamProps) {
-  const isAdmin = searchParams.admin === 'true';
+  // Determine if the 'admin' query parameter is set to "true"
+  const isAdmin = searchParams?.admin === "true";
 
   return (
     <div className="flex h-screen max-h-screen">
+      {/* Conditionally render the PassKeyModal */}
       {isAdmin && <PassKeyModal />}
 
       <Image
@@ -43,4 +47,3 @@ export default function Home({ searchParams }: SearchParamProps) {
     </div>
   );
 }
-

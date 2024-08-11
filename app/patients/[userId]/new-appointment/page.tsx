@@ -1,3 +1,4 @@
+'use server';
 import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
 import { Section } from "lucide-react";
@@ -23,9 +24,8 @@ className="mb-12 h-10 w-fit"/>
        <AppointmentForm
             patientId={patient?.$id}
             userId={userId}
-            type="create" setOpen={function (open: boolean): void {
-              throw new Error('Function not implemented.');
-            } }          />
+            type="create"
+          />
 
 <div className='text-14-regular mt-20 flex justify-between'>
 <p className='justify-items-end text-dark-600 xl:text-left'> © 2024 Carepulse  </p>
